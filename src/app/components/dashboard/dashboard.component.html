@@ -8,7 +8,7 @@
     </a>
     </div>
   </nav>
-   
+
  </mat-toolbar>
  <!-- //conteiner -->
  <mat-sidenav-container class="example-container" >
@@ -27,7 +27,7 @@
       <h1>PERFIL PROFESOR</h1>
       <!-- Mostrar contenido específico para profesores -->
     </div>
-    
+
     <mat-divider></mat-divider>
     <!-- boton -->
           <div *ngIf="userData?.role === 'student'">
@@ -40,6 +40,7 @@
           <!-- editar profesor -->
           <div *ngIf="userData?.role === 'teacher'">
             <button mat-button class="buttonperfil" routerLink="/teacher-dashboard"><span> EDITAR PERFIL</span></button>
+            <button mat-button class="buttonperfil" routerLink="/work-experience"><span> Experiencia Laboral</span></button>
           </div>
           <p></p>
           <!-- Celular -->
@@ -47,18 +48,18 @@
             <strong class="strong" for="name">Celular:</strong>
             <label id="Celular" class="fst-italic" style="margin-left: 5px;">{{userData?.Celular}}</label>
           </div>
-          <p></p>        
+          <p></p>
           <!-- email -->
           <div class="coords">
             <strong class="strong" for="Descripcion">Email:</strong>
             <label id="email" class="fst-italic" style="margin-left: 2px;">{{userData?.email}}</label>
-          </div>    
+          </div>
           <p></p>
           <!-- Direccion -->
           <div class="coords">
             <strong class="strong" for="Descripcion">Direccion:</strong>
             <label id="Direccion" class="fst-italic">{{userData?.Direccion}}</label>
-          </div>       
+          </div>
           <!-- botton salir -->
           <mat-divider></mat-divider>
           <button mat-raised-button color="warn" class="buttonperfil" routerLink="/login"><span> SALIR </span></button>
@@ -81,8 +82,8 @@
             <!-- Descripcion -->
             <div class="coords text-center ">
               <label id="Descripcion" class="fw-lighter lh-base Descripcion">{{userData?.Descripcion}}</label>
-            </div>  
-            <p></p>     
+            </div>
+            <p></p>
             <mat-divider></mat-divider>
             <!-- Carrera -->
             <div class="coords">
@@ -146,7 +147,7 @@
               <strong class="strong texto-general" for="Descripcion">EXPERIENCIA LABORAL:</strong>
               <label id="Experiencia_laboral" class="lh-1 texto-general " style="margin-left:10px;">{{userData?.Experiencia_laboral}}</label>
             </div>
-            <p></p> 
+            <p></p>
         </div>
           <!-- Mostrar un mensaje de carga mientras los datos están siendo obtenidos -->
           <div *ngIf="!isDataLoaded">

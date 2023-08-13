@@ -1,0 +1,47 @@
+<div>
+  <h2>Mis Experiencias Laborales</h2>
+  <form [formGroup]="experienciaForm" (ngSubmit)="isEditing ? actualizarExperiencia() : agregarExperiencia()">
+    <div>
+      <label>Nombre de la experiencia:</label>
+      <input type="text" formControlName="nombre">
+    </div>
+    <div>
+      <label>Fecha de inicio:</label>
+      <input type="date" formControlName="fechaInicio">
+    </div>
+    <div>
+      <label>Fecha de fin:</label>
+      <input type="date" formControlName="fechaFin">
+    </div>
+    <button type="submit" class="btn btn-primary">{{ isEditing ? 'Actualizar' : 'Agregar' }}</button>
+
+  </form>
+
+</div>
+
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Nombre de la experiencia</th>
+      <th>Fecha de inicio</th>
+      <th>Fecha de fin</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let experiencia of experienciasLaborales">
+      <td>{{ experiencia.nombre }}</td>
+      <td>{{ experiencia.fechaInicio | date }}</td>
+      <td>{{ experiencia.fechaFin ? (experiencia.fechaFin | date) : 'Presente' }}</td>
+      <td>
+        <button (click)="editarExperiencia(experiencia)" class="btn btn-sm btn-warning">Editar</button>
+        <button (click)="eliminarExperiencia(experiencia)" class="btn btn-sm btn-danger">Eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<button  class="btn btn-primary" [routerLink]="['../dashboard']"   >Mis datos </button>
+

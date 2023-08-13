@@ -1,13 +1,14 @@
 import {Injectable, NgZone} from '@angular/core';
-import firebase from "firebase/compat";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "@angular/fire/compat/firestore";
 import {addDoc, collection, Firestore} from "@angular/fire/firestore";
-import Users from "../interfaces/users";
+import Users, {WorkExperience} from "../interfaces/users";
 import {AngularFireDatabase, AngularFireList, AngularFireObject} from "@angular/fire/compat/database";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {BehaviorSubject, catchError, filter, from, Observable, of, switchMap} from "rxjs";
+import {BehaviorSubject, catchError, filter, from, map, Observable, of, switchMap, take} from "rxjs";
 import {Router} from "@angular/router";
 import User from "../interfaces/users";
+import firebase from "firebase/compat/app"; // Importa firebase/app
+import "firebase/compat/firestore"; //
 
 @Injectable({
   providedIn: 'root'
@@ -115,7 +116,7 @@ export class FirebaseService {
       email: user.email,
 
       role: role,
-      
+
       emailVerified: user.emailVerified,
     };
     return userRef.set(userData, {
@@ -132,7 +133,7 @@ export class FirebaseService {
       // semester: user.semester,
       // career: user.career,
       // college: user.college,
-      
+
       emailVerified: user.emailVerified,
     };
     return userRef.set(userData, {
@@ -184,4 +185,74 @@ export class FirebaseService {
   updateUserRole(uid: string, role: string) {
     return this.afs.collection('users').doc(uid).update({ role });
   }
+
+  obtenerExperienciasLaborales(uid: string): Observable<WorkExperience[]> {
+    return this.getUserData().pipe(
+      map(userData => userData.Experiencia_laboral || [])
+    );
+  }
+
+  // Agregar una nueva experiencia laboral a un usuario
+  agregarExperienciaLaboral(uid: string, experiencia: WorkExperience): Promise<void> {
+    return this.afs.collection('users').doc(uid).update({
+      Experiencia_laboral: firebase.firestore.FieldValue.arrayUnion(experiencia)
+    });
+  }
+
+  // actualizarExperienciaLaboral(uid: string, experienciaAnterior: WorkExperience, experienciaActualizada: WorkExperience): Promise<void> {
+  //   const experienciaRef = this.afs.collection('users').doc(uid);
+  //
+  //   // Primero, elimina la experiencia anterior si existe
+  //   return experienciaRef.update({
+  //     "Experiencia_laboral": firebase.firestore.FieldValue.arrayRemove(experienciaAnterior)
+  //   }).then(() => {
+  //     // Luego, agrega la experiencia actualizada
+  //     return experienciaRef.update({
+  //       "Experiencia_laboral": firebase.firestore.FieldValue.arrayUnion(experienciaActualizada)
+  //     });
+  //   });
+  // }
+
+  actualizarExperienciaLaboral(uid: string, experienciaAnterior: WorkExperience, experienciaActualizada: WorkExperience): Promise<void> {
+    const experienciaRef = this.afs.collection('users').doc(uid);
+
+    // Obtén los datos del usuario a través del Observable
+    return this.getUserData().pipe(
+      take(1), // Toma solo un valor y luego completa el Observable
+      switchMap(userData => {
+        // Primero, busca la experiencia anterior en la lista de experiencias laborales
+        const experienciasLaborales: WorkExperience[] = userData?.Experiencia_laboral || [];
+        const experienciaIndexs = experienciasLaborales.findIndex(exp => {
+          // Utiliza algún identificador único para comparar experiencias, por ejemplo, el nombre
+          return exp.nombre === experienciaAnterior.nombre;
+        });
+
+        if (experienciaIndexs !== -1) {
+          // Actualiza la experiencia en la lista
+          experienciasLaborales[experienciaIndexs] = experienciaActualizada;
+
+          // Actualiza las experiencias laborales en el usuario
+          return experienciaRef.update({
+            Experiencia_laboral: experienciasLaborales
+          });
+        } else {
+          // La experiencia anterior no fue encontrada, maneja el caso según tu necesidad
+          console.log('Experiencia anterior no encontrada en la lista.');
+          return Promise.reject('Experiencia anterior no encontrada en la lista.');
+        }
+      })
+    ).toPromise(); // Convierte el Observable en una Promise
+  }
+
+
+
+  // Eliminar una experiencia laboral de un usuario
+  eliminarExperienciaLaboral(uid: string, experiencia: WorkExperience): Promise<void> {
+    return this.afs.collection('users').doc(uid).update({
+      "Experiencia_laboral": firebase.firestore.FieldValue.arrayRemove(experiencia),
+    });
+  }
+
+
 }
+

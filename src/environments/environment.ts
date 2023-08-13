@@ -1,12 +1,17 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCC7LWmDU2lLZ2qINzOKqFSHqw_3aYFt80",
-    authDomain: "constituyentes-127c7.firebaseapp.com",
-    projectId: "constituyentes-127c7",
-    storageBucket: "constituyentes-127c7.appspot.com",
-    messagingSenderId: "181515355322",
-    appId: "1:181515355322:web:ee445771f8fff58056ae83",
-    measurementId: "G-WE17RTJ662"
+    apiKey: "AIzaSyC3ywISkWZho7Vb8xs3hC6w7mVEOfnRkEA",
+
+    authDomain: "constituyentes-unsaac.firebaseapp.com",
+
+    projectId: "constituyentes-unsaac",
+
+    storageBucket: "constituyentes-unsaac.appspot.com",
+
+    messagingSenderId: "463105892730",
+
+    appId: "1:463105892730:web:56fc0e4b7ccb6d0e6676c3"
+
   },
 };

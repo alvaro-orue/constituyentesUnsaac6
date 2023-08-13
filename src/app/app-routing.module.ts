@@ -9,6 +9,7 @@ import {UserComponent} from "./components/user/user.component";
 import {AdminDashboardComponent} from "./components/admin-dashboard/admin-dashboard.component";
 import {TeacherDashboardComponent} from "./components/teacher-dashboard/teacher-dashboard.component";
 import {EgressDashboardComponent} from "./components/egress-dashboard/egress-dashboard.component";
+import {WorkExperienceComponent} from "./components/work-experience/work-experience.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent},
   { path: 'egress-dashboard', component: EgressDashboardComponent},
   { path: 'teacher-dashboard', component: TeacherDashboardComponent},
+  { path: 'work-experience', component: WorkExperienceComponent },
   { path: 'user', component: UserComponent },
 
   // { path: 'forgot-password', component: ForgotPasswordComponent },

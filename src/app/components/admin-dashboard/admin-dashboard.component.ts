@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FirebaseService} from "../../services/firebase.service";
+import {WorkExperience} from "../../interfaces/users";
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -11,11 +12,14 @@ export class AdminDashboardComponent {
   isDataLoaded = false; // Band
   itemsPerPage: number = 5;
   currentPage: number = 1;
+  allExperienciasLaborales: any[] = [];
   constructor(public authService: FirebaseService) {
     this.authService.getAllUsers().subscribe(users => {
       this.users = users;
       this.isDataLoaded = true; // Marcar los datos como cargados una vez que se obtienen
-
+      // this.allExperienciasLaborales = users.reduce((experiencias, user) => {
+      //   return experiencias.concat(user.Experiencia_laboral || []);
+      // }, []);
     });
   }
   // Calcula la cantidad total de páginas
@@ -44,4 +48,5 @@ export class AdminDashboardComponent {
           console.log('Error al actualizar el rol de usuario')
         })
   }
+
 }
