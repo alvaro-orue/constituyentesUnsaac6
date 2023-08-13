@@ -1,0 +1,62 @@
+.contenedor-principal {
+    width: 100%;
+    overflow: hidden; /* Limpia el float */
+    background-color: #f1f1f1;
+}
+
+/* Estilos para el contenedor izquierdo */
+.contenedor-izquierdo {
+    float: left;
+    width: 45%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* Estilos para el contenedor derecho */
+.contenedor-derecho {
+    float: right;
+    width: 55%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+/* estilo usuario */
+.Usuario{
+    border: none;
+    border-radius: 0;
+    background-color: white;
+    padding: 10px;
+}
+/* estilo contraseña */
+.Contraseña{
+    border: none;
+    border-radius: 0;
+    background-color: white;
+    padding: 10px;
+}
+/* contenedor */
+.conteiner{
+    background-color: #f1f1f1;
+    width: 55%;
+    border:none;
+    border-radius: 0;
+    padding: 20px;
+}
+.loginconteiner{
+    background-color: #f1f1f1;
+    border:none;
+    border-radius: 0;
+
+}
+.blockquote-custom {
+    font-family: Arial, sans-serif; /* Cambia el tipo de letra a Arial */
+    font-size: 36px; /* Aumenta el tamaño de la fuente a 36px */
+    color: #000; /* Color del texto (negro) */
+}
+.usuarionuevo{
+    background-color: #f1f1f1;
+
+}
+.btn2{
+    background-color: #72050A; 
+    color: white;
+}

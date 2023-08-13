@@ -1,0 +1,64 @@
+.aa{
+    background-color: red;
+}
+.text-center{
+    font-size: 70px;
+}
+.TextNombre{
+    border-radius: 10px;
+    background-color: silver;
+    margin-left: 20px;
+    width: 400px;
+}
+.TextCelular{
+    border-radius: 10px;
+    background-color: silver;
+    margin-left: 20px;
+    width: 150px; 
+}
+.texto_general{
+    font-size: 25px;
+    margin-left: 20px;
+}
+.contenedor-izquierdo {
+    margin-left: 150px;
+    float: left;
+    width: 30%;
+    background-color:white;
+    padding: 20px;
+    border-radius: 16px; 
+}
+.contenedor-derecho {
+    float: right;
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px; 
+    margin-right: 370px;
+}
+.contenedor_descripcion{
+    margin-left:320px;
+    border: 1px solid black;
+    width: 50%;
+    background-color:white;
+    padding: 20px;
+    border-radius: 16px; 
+}
+.texto_Descripcion{
+    font-size: 20px;
+    margin-left:320px;
+}
+.TextFecha{
+    border-radius: 10px;
+    background-color: silver;
+    margin-left: 20px;
+    width: 150px;
+}
+.botonen1{
+    margin-right: 200px;
+    /* float: left;1 */
+    /* width: 30%; */
+    background-color: #72050A;
+    border-radius: 16px; 
+    color: white;
+}

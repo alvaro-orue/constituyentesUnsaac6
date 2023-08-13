@@ -1,0 +1,160 @@
+
+ <mat-toolbar>
+  <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">
+        <img src="https://yt3.googleusercontent.com/YrOv-cWqYsWQJO_-BrTctGHIa3T8VGjo9gnDjUe2ai1FnKPxh9ZcGUk61i7glh1jXNYN_gmcgQ=s900-c-k-c0x00ffffff-no-rj" alt="" width="30" height="24">
+        UNSAAC: Ep Ing. Informática y Sistemas
+    </a>
+    </div>
+  </nav>
+   
+ </mat-toolbar>
+ <!-- //conteiner -->
+ <mat-sidenav-container class="example-container" >
+  <mat-sidenav #sidenav="matSidenav" class=" mat-elevation-z8" mode="side" opened>
+    <img class="avatar mat-elevation-z8" src="data:image/jpeg;base64,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" alt="">
+    <mat-divider></mat-divider>
+    <div *ngIf="userData?.role === 'student'">
+      <h1>PERFIL ESTUDIANTE</h1>
+      <!-- Mostrar contenido específico para estudiantes -->
+    </div>
+    <div *ngIf="userData?.role === 'egress'">
+      <h1>PERFIL EGRESADO</h1>
+      <!-- Mostrar contenido específico para egresados -->
+    </div>
+    <div *ngIf="userData?.role === 'teacher'">
+      <h1>PERFIL PROFESOR</h1>
+      <!-- Mostrar contenido específico para profesores -->
+    </div>
+    
+    <mat-divider></mat-divider>
+    <!-- boton -->
+          <div *ngIf="userData?.role === 'student'">
+            <button mat-button class="buttonperfil" routerLink="/user"><span> EDITAR PERFIL</span></button>
+          </div>
+          <!-- editar egresado -->
+          <div *ngIf="userData?.role === 'egress'">
+            <button mat-button class="buttonperfil" routerLink="/egress-dashboard"><span> EDITAR PERFIL</span></button>
+          </div>
+          <!-- editar profesor -->
+          <div *ngIf="userData?.role === 'teacher'">
+            <button mat-button class="buttonperfil" routerLink="/teacher-dashboard"><span> EDITAR PERFIL</span></button>
+          </div>
+          <p></p>
+          <!-- Celular -->
+          <div class="coords">
+            <strong class="strong" for="name">Celular:</strong>
+            <label id="Celular" class="fst-italic" style="margin-left: 5px;">{{userData?.Celular}}</label>
+          </div>
+          <p></p>        
+          <!-- email -->
+          <div class="coords">
+            <strong class="strong" for="Descripcion">Email:</strong>
+            <label id="email" class="fst-italic" style="margin-left: 2px;">{{userData?.email}}</label>
+          </div>    
+          <p></p>
+          <!-- Direccion -->
+          <div class="coords">
+            <strong class="strong" for="Descripcion">Direccion:</strong>
+            <label id="Direccion" class="fst-italic">{{userData?.Direccion}}</label>
+          </div>       
+          <!-- botton salir -->
+          <mat-divider></mat-divider>
+          <button mat-raised-button color="warn" class="buttonperfil" routerLink="/login"><span> SALIR </span></button>
+    <mat-divider></mat-divider>
+  </mat-sidenav>
+   <!-- contenedor izquiera -->
+   <mat-sidenav-content>
+    <div class="content mat-elevation-z8 " >
+        <!-- Resto del código de la vista -->
+        <!-- Sección para mostrar los datos actualizados -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <!--    // if user.role == student -->
+        <p></p>
+         <div class="contenedor_datos" >
+            <!-- nombre -->
+            <div class="coords text-center">
+              <h1><strong id="name"  class="lh-1 NOMBRE">{{userData?.name}}</strong></h1>
+            </div>
+            <mat-divider></mat-divider>
+            <!-- Descripcion -->
+            <div class="coords text-center ">
+              <label id="Descripcion" class="fw-lighter lh-base Descripcion">{{userData?.Descripcion}}</label>
+            </div>  
+            <p></p>     
+            <mat-divider></mat-divider>
+            <!-- Carrera -->
+            <div class="coords">
+              <strong class="strong texto-general" for="career">CARRERA:</strong>
+              <label id="career" class="texto-general" style="margin-left:150px;">{{userData?.career}}</label>
+            </div>
+            <p></p>
+            <!-- Universidad -->
+            <div class="coords">
+              <strong class="strong texto-general" for="college">UNIVERSIDAD:</strong>
+              <label id="college" class="texto-general" style="margin-left:110px;">{{userData?.college}}</label>
+            </div>
+            <p></p>
+
+            <!-- DEPENDEN DEL ROL -->
+            <!-- Fecha_Ingreso -->
+            <div class="coords" *ngIf="userData?.role !== 'teacher'">
+              <strong class="strong texto-general" for="Descripcion">FECHA DE INGRESO:</strong>
+              <label id="Fecha_Ingreso" class="texto-general" style="margin-left:55px;">{{userData?.Fecha_Ingreso}}</label>
+            </div>
+            <p></p>
+            <!-- Semestre -->
+            <div class="coords" *ngIf="userData?.role !== 'egress'&& userData?.role !== 'teacher'">
+              <strong class="strong texto-general" for="semester">SEMESTRE:</strong>
+              <label id="semester" class="texto-general" style="margin-left:130px;">{{userData?.semester}}</label>
+            </div>
+            <P></P>
+            <!-- Departamento -->
+            <div class="coords" *ngIf="userData?.role !== 'egress'&& userData?.role !== 'student'">
+              <strong class="strong texto-general" for="Departamento">DEPARTAMENTO:</strong>
+              <label id="Departamento" class="texto-general" style="margin-left:130px;">{{userData?.Departamento}}</label>
+            </div>
+            <P></P>
+            <!-- Maestria -->
+            <div class="coords" *ngIf="userData?.role !== 'student'">
+              <strong class="strong texto-general" for="Maestria">MAESTRIA:</strong>
+              <label id="Maestria" class="texto-general" style="margin-left:130px;">{{userData?.Maestria}}</label>
+            </div>
+            <P></P>
+            <!-- Doctorado -->
+            <div class="coords" *ngIf="userData?.role !== 'egress'&& userData?.role !== 'student'">
+              <strong class="strong texto-general" for="Doctorado">DOCTORADO:</strong>
+              <label id="Doctorado" class="texto-general" style="margin-left:130px;">{{userData?.Doctorado}}</label>
+            </div>
+            <P></P>
+            <!-- Titulo -->
+            <div class="coords" *ngIf="userData?.role !== 'student'">
+              <strong class="strong texto-general" for="Titulo">TITULO:</strong>
+              <label id="Titulo" class="texto-general" style="margin-left:130px;">{{userData?.Titulo}}</label>
+            </div>
+            <P></P>
+            <!-- Fecha_Egreso -->
+            <div class="coords" *ngIf="userData?.role !== 'student'">
+              <strong class="strong texto-general" for="Fecha_Egreso">FECHA DE EGRESO:</strong>
+              <label id="Fecha_Egreso" class="texto-general" style="margin-left:55px;">{{userData?.Fecha_Egreso}}</label>
+            </div>
+            <P></P>
+            <!-- tambien general para todos -->
+            <!-- Experiencia_laboral -->
+            <div class="coords" >
+              <strong class="strong texto-general" for="Descripcion">EXPERIENCIA LABORAL:</strong>
+              <label id="Experiencia_laboral" class="lh-1 texto-general " style="margin-left:10px;">{{userData?.Experiencia_laboral}}</label>
+            </div>
+            <p></p> 
+        </div>
+          <!-- Mostrar un mensaje de carga mientras los datos están siendo obtenidos -->
+          <div *ngIf="!isDataLoaded">
+            Cargando...
+          </div>
+        </main>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- Sidebar navigation -->
+

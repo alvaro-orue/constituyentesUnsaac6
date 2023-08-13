@@ -1,0 +1,118 @@
+
+<nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">
+        <img src="https://yt3.googleusercontent.com/YrOv-cWqYsWQJO_-BrTctGHIa3T8VGjo9gnDjUe2ai1FnKPxh9ZcGUk61i7glh1jXNYN_gmcgQ=s900-c-k-c0x00ffffff-no-rj" alt="" width="30" height="24">
+        UNSAAC: Ep Ing. Informática y Sistemas
+    </a>
+    </div>
+  </nav>
+  <main role="main" >
+      <!-- Formulario para actualizar datos de usuario -->
+      <form (submit)="updateUserProfile()" class="card  ">
+          <!-- Formulario de actualización de datos -->
+          <div *ngIf="userData as user">
+            <p></p>
+            <h1 class="text-center">PERFIL DOCENTE</h1>
+            <!-- Descripcion -->
+            <label class="strong texto_Descripcion" for="Descripcion">Descripcion:</label>
+            <div class="form-floating contenedor_descripcion">
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" type="text"   [(ngModel)]="user.Descripcion" name="Descripcion"></textarea>
+              <label for="floatingTextarea2">Comments</label>
+            </div>
+  
+            <div class="coords ">
+              <!-- contenedor izquierda -->
+              <div class="contenedor-izquierdo ">
+              <!-- campos generales -->
+              <!-- nombre -->
+                <div class="coords" >
+                  <strong><label class="strong texto_general" for="name">NOMBRE:</label></strong>
+                  <input type="text" id="name" class="form-control TextNombre"  [(ngModel)]="user.name" name="name"  >
+                </div>
+                <p></p>
+                <!-- celular -->
+                <div class="coords">
+                  <strong class="strong texto_general" for="Titulo">CELULAR:</strong>
+                  <input type="number" id="Celular"  class="form-control TextCelular" [(ngModel)]="user.Celular" name="Celular" >
+                </div>
+                <p></p>
+                <!-- Direccion -->
+                <div class="coords">
+                  <strong class="strong texto_general" for="Titulo">DIRECCION:</strong>
+                  <input type="text" id="Direccion" class="form-control TextNombre" [(ngModel)]="user.Direccion" name="Direccion">
+                </div>
+                <p></p>
+                <!-- carrera -->
+                <div class="coords ">
+                  <strong class="strong texto_general" for="career">CARRERA:</strong>
+                  <input type="text" id="career" class="form-control TextNombre" [(ngModel)]="user.career" name="career">
+                </div>
+                <p></p>
+              <!-- Universidad -->
+              <div class="coords">
+                <strong class="strong texto_general" for="college">UNIVERCIDAD:</strong>
+                <input type="text" id="college" class="form-control TextNombre" [(ngModel)]="user.college" name="college">
+              </div>
+              <p></p>
+              <div class="coords">
+                <strong class="strong texto_general" for="Departamento">DEPARTAMENTO</strong>
+                <input type="text" id="Departamento" class="form-control TextNombre" [(ngModel)]="user.Departamento" name="Departamento">
+              </div>
+              </div>
+              <!-- Departamento -->
+
+              <!-- otro contenedor derecho-->
+  
+              <!-- campos que dependen de rol -->
+            <div class="contenedor-derecho ">
+              <!-- Titulo -->
+              <div class="coords">
+                <strong class="strong texto_general" for="Titulo">TITULO:</strong>
+                <input type="text" id="Titulo" class="form-control TextNombre" [(ngModel)]="user.Titulo" name="Titulo">
+              </div>
+              <P></P>
+              <!-- Maestria -->
+              <div class="coords">
+                <strong class="strong texto_general" for="Maestria">MAESTRIA:</strong>
+                <input type="text" id="Maestria" class="form-control TextNombre" [(ngModel)]="user.Maestria" name="Maestria">
+              </div>
+              <P></P>
+              <!-- Fecha_Egreso -->
+                 <!-- Doctorado -->
+              <div class="coords">
+                <strong class="strong texto_general" for="Doctorado">Doctorado</strong>
+                <input type="text" id="Doctorado" class="form-control TextNombre" [(ngModel)]="user.Doctorado" name="Doctorado">
+              </div>
+              <P></P>
+              <!-- Fecha_Ingreso -->
+              <div class="coords">
+                <strong class="strong texto_general" for="Fecha_Ingreso">FECHA DE INGRESO:</strong>
+                <input type="date" id="Fecha_Ingreso" class="form-control TextFecha" [(ngModel)]="user.Fecha_Ingreso" name="Fecha_Ingreso">
+              </div>
+              <P></P>
+              <!-- Experiencia_laboral -->
+              <div class="coords">
+                <strong class="strong texto_general" for="Experiencia_laboral">EXPERIENCIA LABORAL</strong>
+                <input type="text" id="Experiencia_laboral" class="form-control TextNombre" [(ngModel)]="user.Experiencia_laboral" name="Experiencia_laboral">
+              </div>
+              <P></P>
+             <!-- Especialidad_Docente -->
+              <div class="coords">
+                <strong class="strong texto_general" for="Especialidad_Docente">Especialidad_Docente</strong>
+                <input type="text" id="Especialidad_Docente" class="form-control TextNombre" [(ngModel)]="user.Especialidad_Docente" name="Especialidad_Docente">
+              </div>
+            </div>
+            </div>
+            <!-- botones -->
+            <div class="text-center mt-3 ">
+              <button type="submit"  class="btn botonen1">Actualizar Perfil</button>
+              <button  class="btn botonen1" routerLink="/dashboard"   >Mis datos </button>
+            </div>
+  
+          </div>
+        
+      </form>
+  
+  </main>
+  

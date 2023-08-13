@@ -1,0 +1,93 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.mat-sidenav-container{
+    height: calc(100vh - 65px);
+    background-color: #f1f1f1;
+    
+
+}
+.mat-toolbar{
+    background: black;
+    color: white;
+}
+.mat-sidenav{
+    margin: 20px;
+    margin-left: 50px;
+    width: 300px;
+    border-right: none;
+    background: white;
+    border-radius: 16px;
+    text-align: center;
+}
+.avatar{
+    margin-top: 16px;
+    width: 200px;
+    height: 200px;
+    
+}
+.buttonperfil{
+    width: 100%;
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+
+}
+.content{
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 100px;
+    display: flex;
+    font-size: 1rem;
+    color:black;
+    background-color: white;
+}
+.mat-divider{
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color:white;
+}
+.mat-sidenav-content{
+    height: calc(100vh - 65px);
+   
+    /* width: 2000px; */
+}
+.texto-grande {
+     /* Ajusta el valor según tu gusto */
+   
+    padding: 20px; 
+    white-space: pre-line;
+    word-wrap: break-word;
+    
+}
+.contenedor_datos{
+    background-color: white;
+    height: calc(95vh - 98px);
+    border-radius: 10px;
+    width: 1090px;
+    padding: 20px;
+    
+    
+}
+.NOMBRE{
+     background-color: white;
+     margin-top: 30PX; /* Ajusta el valor según tu preferencia */
+     width: 700px;
+     height: 150px; 
+     white-space: pre-line;
+     word-wrap: break-word;
+     font-size: 70px;
+     
+}
+.Descripcion{
+    font-size: 22px;
+}
+.texto-general{
+    font-size: 20px;   
+}
+.aa{
+    background-color: red;
+}
+
+
